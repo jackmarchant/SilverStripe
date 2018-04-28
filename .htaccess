@@ -1,2 +1,6 @@
 RewriteEngine On
 RewriteRule ^(.*)$ public/$1
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+AllowOverride All
+Order allow,deny
+Allow from all
