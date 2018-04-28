@@ -1,6 +1,7 @@
 {
     "name": "jackmarchant/silverstripe",
     "description": "An example silverstripe website",
+    "type": "silverstripe-project",
     "require": {
         "ext-gd": "*",
 		"ext-mbstring": "*",
@@ -12,23 +13,40 @@
         "phpunit/phpunit": "^5.7"
     },
     "extra": {
+        "expose": [
+            "themes/silverstripe"
+        ],
         "project-files-installed": [
+            ".env.example",
+            ".htaccess",
+            "assets/.gitignore",
+            "assets/.htaccess",
+            "assets/web.config",
+            "favicon.ico",
+            "index.php",
             "mysite/.htaccess",
             "mysite/_config.php",
             "mysite/_config/mysite.yml",
+            "mysite/_config/theme.yml",
             "mysite/code/Page.php",
-            "mysite/code/PageController.php"
+            "mysite/code/PageController.php",
+            "web.config"
         ],
         "public-files-installed": [
             ".htaccess",
+            "assets/.gitignore",
+            "assets/.htaccess",
+            "assets/web.config",
+            "favicon.ico",
             "index.php",
-            "install-frameworkmissing.html",
-            "install.php",
             "web.config"
         ]
     },
     "config": {
-        "process-timeout": 600
+        "process-timeout": 600,
+        "platform": {
+            "php": "7.2.0"
+        }
     },
     "prefer-stable": true
 }
