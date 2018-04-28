@@ -34,8 +34,6 @@ ErrorDocument 500 /assets/error-500.html
     RewriteEngine On
     RewriteBase '/silverstripe/public'
 
-    
-
     # Deny access to potentially sensitive files and folders
     RewriteRule ^vendor(/|$) - [F,L,NC]
     RewriteRule ^\.env - [F,L,NC]
@@ -48,6 +46,7 @@ ErrorDocument 500 /assets/error-500.html
     # Try finding framework in the vendor folder first
     RewriteCond %{REQUEST_URI} ^(.*)$
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{ENV:REDIRECT_STATUS} 200
     RewriteRule .* index.php
 </IfModule>
 ### SILVERSTRIPE END ###
