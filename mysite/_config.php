@@ -1,10 +1,4 @@
 <?php
-use SilverStripe\Control\Director;
-use SilverStripe\Core\Kernel;
-
-if (Director::isLive()) {
-	Director::forceSSL();
-}
 
 //Heroku ClearDB support
 if(isset($_ENV['CLEARDB_DATABASE_URL'])) {
